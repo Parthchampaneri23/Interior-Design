@@ -65,52 +65,52 @@ export default function Navigation() {
   return (
     <>
       <header
-        className="fixed top-0 left-0 right-0 z-50 pt-3 sm:pt-4 transition-all duration-500 ease-out pointer-events-none bg-transparent pb-0 border-none text-black"
+        className="fixed top-0 left-0 right-0 z-50 pt-1.5 sm:pt-2 transition-all duration-500 ease-out pointer-events-none bg-transparent pb-0 border-none text-black"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 flex items-center justify-between pointer-events-auto">
-          {/* Combined Rounded-Full Transparent/Glass Pill Container Covering Logo & Tabs (Zero vertical padding) */}
+        <div className="max-w-7xl mx-auto px-3 sm:px-5 md:px-6 flex items-center justify-between pointer-events-auto">
+          {/* Combined Rounded-Full Transparent/Glass Pill Container Covering Logo & Tabs (Minimal vertical padding) */}
           <div
-            className={`hidden lg:flex items-center justify-between w-full px-6 py-0 rounded-full backdrop-blur-md transition-all duration-300 border-none ${
+            className={`hidden lg:flex items-center justify-between w-full pl-5 sm:pl-7 pr-8 xl:pr-10 py-0.5 rounded-full backdrop-blur-md transition-all duration-300 border-none ${
               hasDarkBg
-                ? "bg-neutral-100/90"
-                : "bg-white/40"
+                ? "bg-neutral-100/90 shadow-sm"
+                : "bg-white/40 shadow-sm"
             }`}
           >
             {/* Studio Brand Logo Image Inside the Pill (Enlarged) */}
             <Link
               href="/"
-              className="group flex items-center focus:outline-none relative py-0 shrink-0"
+              className="group flex items-center focus:outline-none relative shrink-0 mr-3 py-0"
               aria-label="DECOREX Home"
             >
-              <div className="relative h-16 sm:h-20 w-52 sm:w-64 transition-transform duration-300 group-hover:scale-105">
+              <div className="relative h-16 sm:h-20 lg:h-[82px] w-44 sm:w-52 lg:w-56 transition-transform duration-300 group-hover:scale-105">
                 <Image
                   src="/logo.png"
                   alt="DECOREX Architecture and Interior Design"
                   fill
                   priority
                   className="object-contain object-left"
-                  sizes="(max-width: 640px) 180px, 260px"
+                  sizes="(max-width: 640px) 180px, 240px"
                 />
               </div>
             </Link>
 
-            {/* Desktop Navigation Links (No black background on active tab) */}
-            <nav className="flex items-center space-x-1 sm:space-x-2 py-0 shrink-0" aria-label="Main Navigation">
+            {/* Desktop Navigation Links */}
+            <nav className="flex items-center space-x-0.5 xl:space-x-1.5 shrink-0 py-0" aria-label="Main Navigation">
               {NAV_LINKS.map((link) => {
                 const isActive = pathname === link.href;
                 return (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`text-sm uppercase tracking-[0.18em] font-semibold transition-all duration-300 px-3.5 py-1.5 rounded-full relative whitespace-nowrap ${
+                    className={`text-[13px] xl:text-sm uppercase tracking-[0.11em] xl:tracking-[0.14em] font-semibold transition-all duration-300 px-2.5 xl:px-3 py-1 rounded-full relative whitespace-nowrap ${
                       isActive
-                        ? "text-[#3c4130] font-bold"
-                        : "text-black hover:text-[#3c4130] hover:bg-black/5"
+                        ? "text-[#B79A70] font-bold"
+                        : "text-black hover:text-[#B79A70] hover:bg-black/5"
                     }`}
                   >
                     <span>{link.name}</span>
                     {isActive && (
-                      <span className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-4 h-[2px] bg-[#3c4130] rounded-full" />
+                      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-[2px] bg-[#B79A70] rounded-full" />
                     )}
                   </Link>
                 );
@@ -119,20 +119,20 @@ export default function Navigation() {
           </div>
 
           {/* Mobile View: Logo on left, Menu on right */}
-          <div className="flex items-center justify-between w-full lg:hidden py-1">
+          <div className="flex items-center justify-between w-full lg:hidden py-0.5">
             <Link
               href="/"
               className="group flex items-center focus:outline-none relative py-0 px-3 rounded-full bg-white/40 backdrop-blur-md border-none"
               aria-label="DECOREX Home"
             >
-              <div className="relative h-14 w-44">
+              <div className="relative h-15 sm:h-16 w-44 sm:w-48">
                 <Image
                   src="/logo.png"
                   alt="DECOREX Architecture and Interior Design"
                   fill
                   priority
                   className="object-contain object-left"
-                  sizes="180px"
+                  sizes="200px"
                 />
               </div>
             </Link>

@@ -38,7 +38,7 @@ export default function Home() {
       <ConsultationBannerSection />
 
       {/* 9. Architectural Journal Essays Preview */}
-      <JournalPreviewSection posts={BLOG_POSTS} />
+      <JournalPreviewSection posts={BLOG_POSTS.slice(0, 3)} />
     </>
   );
 }

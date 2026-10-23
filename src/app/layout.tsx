@@ -3,7 +3,6 @@ import { Plus_Jakarta_Sans, Manrope, Cormorant_Garamond } from "next/font/google
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import ScrollProgress from "@/components/ScrollProgress";
 import RouteScrollTriggerCleanup from "@/components/RouteScrollTriggerCleanup";
 import ScrollToTop from "@/components/ScrollToTop";
 import CustomCursor from "@/components/CustomCursor";
@@ -57,7 +56,6 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col bg-[#F7F5F0] text-[#242522] overflow-x-hidden">
         <CustomCursor />
         <RouteScrollTriggerCleanup />
-        <ScrollProgress />
         <Navigation />
         <main className="flex-1 w-full">{children}</main>
         <Footer />

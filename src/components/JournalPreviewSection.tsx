@@ -44,7 +44,7 @@ export default function JournalPreviewSection({ posts }: Props) {
 
         {/* 3 Editorial Articles */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
-          {posts.map((post) => (
+          {posts.slice(0, 3).map((post) => (
             <article
               key={post.id}
               className="group flex flex-col justify-between bg-white border border-[#E9E2D7] p-6 sm:p-7 rounded-2xl shadow-sm hover:shadow-xl hover:border-[#b38f58]/50 transition-all duration-500"
