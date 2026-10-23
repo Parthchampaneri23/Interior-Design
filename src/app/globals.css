@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+:root {
+  --color-ivory: #F7F5F0;
+  --color-sand: #E9E2D7;
+  --color-charcoal: #242522;
+  --color-olive: #41483B;
+  --color-champagne: #B79A70;
+  --color-stone: #77766F;
+  --color-dark: #20231F;
+  --color-white: #FFFFFF;
+
+  --background: var(--color-ivory);
+  --foreground: var(--color-charcoal);
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #20231F;
+}
+
+body {
+  background-color: var(--color-ivory);
+  color: var(--color-charcoal);
+  font-family: var(--font-sans), "Manrope", system-ui, sans-serif;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Base typography sizing override: text-xs updated to text-sm size across pages */
+.text-xs {
+  font-size: 0.875rem !important; /* 14px (matching text-sm) */
+  line-height: 1.25rem !important;
+}
+
+/* Title Font matching the Brand Logo font family (Cormorant Garamond / Serif) */
+.font-title {
+  font-family: var(--font-serif), "Cormorant Garamond", "Playfair Display", "Didot", serif;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.font-serif {
+  font-family: var(--font-serif), "Cormorant Garamond", "Playfair Display", "Didot", serif;
+}
+
+/* Custom editorial scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #20231F;
+}
+::-webkit-scrollbar-thumb {
+  background: #41483B;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B79A70;
+}
+
+/* Clipping mask utility classes for GSAP reveal animations */
+.clip-hidden-bottom {
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+}
+.clip-full {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.clip-inset-reveal {
+  clip-path: inset(100% 0 0 0);
+  transition: clip-path 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.clip-inset-reveal.is-revealed {
+  clip-path: inset(0% 0 0 0);
+}
+
+/* Smooth mask transitions */
+.mask-text-wrapper {
+  overflow: hidden;
+  display: inline-block;
+}
+
+/* Editorial gold hover glow */
+.editorial-hover-line {
+  position: relative;
+}
+.editorial-hover-line::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: #B79A70;
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.editorial-hover-line:hover::after {
+  width: 100%;
+}
+
+/* Messy architectural collage keyframes and utilities */
+@keyframes messyGlitch {
+  0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  25% { transform: translate(-3px, 2px) scale(1.02) rotate(-0.5deg); }
+  50% { transform: translate(2px, -2px) scale(0.99) rotate(0.8deg); }
+  75% { transform: translate(-1px, -3px) scale(1.01) rotate(-0.3deg); }
+  100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+}
+
+.messy-hover:hover {
+  animation: messyGlitch 1.2s infinite ease-in-out;
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 12s linear infinite;
+}
+
+/* Bespoke Architectural Precision Cursor */
+@media (hover: hover) and (pointer: fine) {
+  body,
+  a,
+  button,
+  [role="button"],
+  .cursor-pointer {
+    cursor: none !important;
+  }
+
+  /* Retain native text cursor for comfortable text editing */
+  input,
+  textarea,
+  [contenteditable="true"] {
+    cursor: text !important;
+  }
+}
