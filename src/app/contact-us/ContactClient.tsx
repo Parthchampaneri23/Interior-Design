@@ -487,19 +487,19 @@ export default function ContactClient() {
                 </div>
 
                 {/* Submit Action Bar */}
-                <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <button
                     type="submit"
                     disabled={formSubmitting}
-                    className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#20231F] hover:bg-[#B79A70] text-white text-xs uppercase tracking-[0.2em] font-semibold transition-all shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-95 disabled:opacity-60 flex items-center justify-center space-x-2.5"
+                    className="w-full sm:w-auto px-6 sm:px-7 py-3.5 rounded-full bg-[#20231F] hover:bg-[#B79A70] text-white text-xs uppercase tracking-[0.12em] font-semibold transition-all shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-95 disabled:opacity-60 flex items-center justify-center space-x-2 whitespace-nowrap shrink-0"
                   >
-                    <Send className="w-4 h-4 text-[#B79A70] group-hover:text-white" />
-                    <span>{formSubmitting ? "Dispatching Dossier..." : "Submit Consultation Brief"}</span>
+                    <Send className="w-3.5 h-3.5 text-[#B79A70] group-hover:text-white shrink-0" />
+                    <span className="whitespace-nowrap">{formSubmitting ? "Dispatching Dossier..." : "Submit Consultation Brief"}</span>
                   </button>
 
-                  <div className="flex items-center space-x-2 text-xs text-[#77766F] font-mono">
-                    <ShieldCheck className="w-4 h-4 text-[#B79A70]" />
-                    <span>NDA Protected Confidentiality</span>
+                  <div className="flex items-center space-x-2 text-xs text-[#77766F] font-mono whitespace-nowrap shrink-0">
+                    <ShieldCheck className="w-4 h-4 text-[#B79A70] shrink-0" />
+                    <span className="whitespace-nowrap">NDA Protected Confidentiality</span>
                   </div>
                 </div>
               </form>

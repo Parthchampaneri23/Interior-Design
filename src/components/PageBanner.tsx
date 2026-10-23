@@ -62,23 +62,23 @@ export default function PageBanner({
         {/* Breadcrumb Navigation */}
         <nav
           aria-label="Breadcrumb"
-          className="inline-flex items-center space-x-2 sm:space-x-3 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 mb-4 sm:mb-6"
+          className="inline-flex items-center space-x-2 sm:space-x-2.5 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 mb-4 sm:mb-6"
         >
           {items.map((crumb, idx) => {
             const isLast = idx === items.length - 1;
             return (
-              <div key={idx} className="inline-flex items-center space-x-2 sm:space-x-3">
-                {idx === 0 && <Home className="w-3.5 h-3.5 text-[#B79A70]" />}
+              <div key={idx} className="inline-flex items-center space-x-2 sm:space-x-2.5">
+                {idx === 0 && <Home className="w-3 h-3 text-[#B79A70]" />}
                 {crumb.href && !isLast ? (
                   <Link
                     href={crumb.href}
-                    className="text-sm sm:text-sm uppercase tracking-[0.18em] font-medium text-white/80 hover:text-[#B79A70] transition-colors"
+                    className="text-[11px] sm:text-xs uppercase tracking-[0.16em] font-medium text-white/80 hover:text-[#B79A70] transition-colors"
                   >
                     {crumb.label}
                   </Link>
                 ) : (
                   <span
-                    className={`text-sm sm:text-sm uppercase tracking-[0.18em] font-semibold ${
+                    className={`text-[11px] sm:text-xs uppercase tracking-[0.16em] font-semibold ${
                       isLast ? "text-[#B79A70]" : "text-white/80"
                     }`}
                     aria-current={isLast ? "page" : undefined}
@@ -87,7 +87,7 @@ export default function PageBanner({
                   </span>
                 )}
                 {!isLast && (
-                  <ChevronRight className="w-3 h-3 text-white/40 shrink-0" />
+                  <ChevronRight className="w-2.5 h-2.5 text-white/40 shrink-0" />
                 )}
               </div>
             );
