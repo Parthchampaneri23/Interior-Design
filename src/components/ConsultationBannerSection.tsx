@@ -34,7 +34,7 @@ export default function ConsultationBannerSection() {
           </Link>
 
           <Link
-            href="/contact"
+            href="/contact-us"
             className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-8 py-4 border border-[#E9E2D7]/50 text-[#F7F5F0] font-semibold text-sm uppercase tracking-[0.22em] hover:border-white hover:bg-white/10 transition-all"
           >
             <span>Direct Studio Inquiries</span>
